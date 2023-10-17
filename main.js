@@ -1,47 +1,17 @@
-let users = [
-    {
-        id:1,
-        name:"Mihai",
-        email:"mihai.gheorghe@csie.ase.ro",
-        password:"Mihai1!"
-    },
-    {
-        id:2,
-        name:"Elena",
-        email:"elena@gmai.com",
-        password:"Elena1!"
-    }
-]
+import { login } from "./Login/login.js";
+import { logout } from "./Login/logout.js";
 
-let toDos =[
-    {
-        id:1,
-        taskName:"do the dishes",
-        status:"to-do",
-        responsible:"Mihai"
-    },
-    {
-        id:2,
-        taskName:"do the laundry",
-        status:"to-do",
-        responsible:"Mihai"
-    },
-    {
-        id:3,
-        taskName:"do homework",
-        status:"in progress",
-        responsible:"Elena"
-    },
-    {
-        id:4,
-        taskName:"binging",
-        status:"done",
-        responsible:"Elena"
-    }
-]
+const loginButton = document.querySelector("#loginSubmit");
+loginButton.addEventListener("click", login);
 
-import{login} from "./Login/login.js"
-const loginButton= document.querySelector("#loginSubmit")
+const isLoggedIn = localStorage.getItem("isLoggedIn");
+if (isLoggedIn) {
+  document.getElementById("login").setAttribute("hidden", true);
+  document.getElementById("register").setAttribute("hidden", true);
+  document.getElementById("user").removeAttribute("hidden");
+  document.getElementById("greetings").textContent =
+    "Salut " + localStorage.getItem("username");
+}
 
-loginButton.addEventListener("click",login)
-
+const logoutButton = document.querySelector("#logout");
+logoutButton.addEventListener("click", logout);
