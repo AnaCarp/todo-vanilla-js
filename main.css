@@ -2,3 +2,19 @@ body * {
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+button,
+input {
+    display: block;
+    height: 2.5rem;
+    padding: 7px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    margin: 10px;
+}
+
+button {
+    background-color: bisque;
+    font-weight: bold;
+
+}
