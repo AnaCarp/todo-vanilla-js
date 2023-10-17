@@ -4,7 +4,7 @@ body * {
 }
 
 button,
-input {
+input, select {
     display: block;
     height: 2.5rem;
     padding: 7px;
@@ -17,4 +17,16 @@ button {
     background-color: bisque;
     font-weight: bold;
 
+}
+
+.taskName{
+    font-weight: bolder;
+    color: brown;
+    margin:10px;
+    display: inline-block;
+
+}
+.taskStatus{
+    margin:50px;
+    font-size: small;
 }
